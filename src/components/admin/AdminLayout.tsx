@@ -1,12 +1,20 @@
 import React from 'react';
 import { Layout, Menu } from 'antd';
-import { Outlet, Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, ShoppingBag, Users, Settings } from 'lucide-react';
+import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
+import { LayoutDashboard, ShoppingBag, Users, Settings, LogOut } from 'lucide-react';
+import { useAuth } from '../../App'; 
 
 const { Header, Sider, Content } = Layout;
 
 const AdminLayout: React.FC = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const { logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
 
   const menuItems = [
     {
@@ -48,6 +56,13 @@ const AdminLayout: React.FC = () => {
         <Header className="bg-white px-6 border-b border-gray-200">
           <div className="flex justify-between items-center h-full">
             <h1 className="text-xl font-semibold">Admin Dashboard</h1>
+            <button 
+              onClick={handleLogout}
+              className="flex items-center gap-2 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+            >
+              <LogOut className="w-4 h-4" />
+              Logout
+            </button>
           </div>
         </Header>
         <Content className="bg-gray-50 p-6">

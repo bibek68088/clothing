@@ -1,6 +1,7 @@
 import React from 'react';
-import { Search, Heart, ShoppingCart, User, Menu } from 'lucide-react';
+import { Search, Heart, ShoppingCart, Menu } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import AuthModal from '../components/admin/AuthModal'; 
 
 const Navbar: React.FC = () => {
   return (
@@ -15,7 +16,7 @@ const Navbar: React.FC = () => {
           <div className="flex items-center space-x-6">
             <Link to="/contact" className="text-sm text-gray-700">Contact us</Link>
             <Heart className="w-5 h-5 text-gray-700 cursor-pointer" />
-            <User className="w-5 h-5 text-gray-700 cursor-pointer" />
+            <AuthModal /> {/* Replace the User icon with AuthModal */}
             <ShoppingCart className="w-5 h-5 text-gray-700 cursor-pointer" />
           </div>
         </div>
