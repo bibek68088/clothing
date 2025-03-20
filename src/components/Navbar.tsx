@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
           <div className="flex items-center space-x-6">
             <Link to="/contact" className="text-sm text-gray-700">Contact us</Link>
             <Heart className="w-5 h-5 text-gray-700 cursor-pointer" />
-            <AuthModal /> {/* Replace the User icon with AuthModal */}
+            <AuthModal />
             <ShoppingCart className="w-5 h-5 text-gray-700 cursor-pointer" />
           </div>
         </div>

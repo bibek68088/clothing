@@ -43,7 +43,7 @@ const AdminLayout: React.FC = () => {
     <Layout style={{ minHeight: '100vh' }}>
       <Sider theme="light" className="border-r border-gray-200">
         <div className="h-16 flex items-center justify-center border-b border-gray-200">
-          <Link to="/" className="text-xl font-bold">Vogue Admin</Link>
+          <Link to="/" className="text-xl font-bold"> Admin</Link>
         </div>
         <Menu
           mode="inline"
